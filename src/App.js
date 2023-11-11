@@ -1,12 +1,16 @@
 import 'bootstrap/dist/css/bootstrap.min.css';
-import { useState } from 'react';
-import ReactFragment from './components/ReactFragment';
+import ListStateUp from './components/LiftStateUp';
 import React from 'react';
 
 function App() {
+  function parentAlert(data) {
+    console.log("Name is: " + data.name);
+    console.log("Age is: " + data.age);
+  }
+
   return (
     <React.Fragment>
-      <ReactFragment></ReactFragment>
+      <ListStateUp alert={parentAlert}></ListStateUp>
     </React.Fragment>
   );
 }
