@@ -1,11 +1,14 @@
-import 'bootstrap/dist/css/bootstrap.min.css';
+import { Button } from 'flowbite-react';
 import React from 'react';
+import Home from './components/Home';
+import Nav from './components/Nav';
 
 class App extends React.Component {
   render() {
     return (
       <>
-        Root App
+        <Nav></Nav>
+        <Home></Home>
       </>
     );
   };
