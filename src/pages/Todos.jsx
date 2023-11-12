@@ -21,32 +21,36 @@ const Todos = () => {
 
                 <div className="card-body">
                     <div className="card-responsive">
-                        <Table striped bordered hover>
-                            <thead>
-                                <tr>
-                                    <th>#</th>
-                                    <th>Title</th>
-                                    <th>Status</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                {
-                                    todos.map((item) => 
-                                        <tr key={item.id}>
-                                            <td>{item.id}</td>
-                                            <td>{item.title}</td>
-                                            <td>
-                                                <Link 
-                                                    to={`/todo/${item.id}`}
-                                                >
-                                                    {item.completed ? 'Completed' : 'Incomplete'}
-                                                </Link>
-                                            </td>
-                                        </tr>
-                                    )
-                                }
-                            </tbody>
-                        </Table>
+                        {
+                           todos.length ? 
+                            <Table striped bordered hover>
+                                <thead>
+                                    <tr>
+                                        <th>#</th>
+                                        <th>Title</th>
+                                        <th>Status</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    {
+                                        todos.map((item) => 
+                                            <tr key={item.id}>
+                                                <td>{item.id}</td>
+                                                <td>{item.title}</td>
+                                                <td>
+                                                    <Link 
+                                                        to={`/todo/${item.id}`}
+                                                    >
+                                                        {item.completed ? 'Completed' : 'Incomplete'}
+                                                    </Link>
+                                                </td>
+                                            </tr>
+                                        )
+                                    }
+                                </tbody>
+                            </Table>
+                            :'Fetching please wait....'
+                        }
                     </div>
                 </div>
             </div>
