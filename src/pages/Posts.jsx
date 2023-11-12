@@ -1,5 +1,5 @@
 import { Button } from 'react-bootstrap';
-import { useParams, Link, useSearchParams } from 'react-router-dom';
+import { useParams, Link, useSearchParams, useLocation } from 'react-router-dom';
 
 const Posts = () => {
     const params = useParams();
