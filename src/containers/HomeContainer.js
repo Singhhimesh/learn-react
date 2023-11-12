@@ -3,8 +3,16 @@ import Home from '../components/Home';
 import { addToCart } from '../services/actions/index';
 import { data } from "autoprefixer";
 
-const mapDispatchToProps = dispatch => {
-    addToCartHandler:data
-}
+
+const mapStateToProps = state => ({
+
+});
+
+const mapDispatchToProps = dispatch => ({
+    addToCartHandler:data => dispatch(addToCart(data))
+});
+
+export default connect(mapStateToProps, mapDispatchToProps)(Home);
+
 
 // export default Home;
