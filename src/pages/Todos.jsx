@@ -5,14 +5,11 @@ import LoadingBar from 'react-top-loading-bar';
 
 const Todos = () => {
     const [ todos, setTodos ] = useState([]);
-    const [ loading, setLoading ] = useState(false);
     const [ progress, setProgress ] = useState(0);
 
     useEffect(() => {
         const fetchData = () => {
             try {
-                setLoading(true);
-
                 fetch('https://jsonplaceholder.typicode.com/todos/').then((res) => {
                     res.json().then((response) => {
                         setTodos(response);
@@ -21,12 +18,9 @@ const Todos = () => {
 
                 setProgress(100);
             } catch (error) {
+                console.log(error);
             } finally {
-                // Stop loading bar after a short delay (adjust as needed)
-                setTimeout(() => {
-                    setLoading(false);
-                    setProgress(0);
-                }, 500);
+                setTimeout(() => setProgress(0), 200);
             }
         }
 
@@ -37,7 +31,7 @@ const Todos = () => {
         <div className="container">
             <LoadingBar
                 color="#f11946" // You can customize the color
-                height={3} // You can customize the height
+                height={1} // You can customize the height
                 progress={progress}
             />
             <div className="card mt-2">

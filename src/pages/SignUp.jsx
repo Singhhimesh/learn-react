@@ -81,41 +81,35 @@ const SignUp = () => {
                         Register
                     </div>
                     <div className="card-body">
-                        <label>
-                            Username:
-                            <input
-                                type="text"
-                                name="username"
-                                className='form-control'
-                                value={formData.username}
-                                onChange={handleChange}
-                            />
-                            <span style={{ color: 'red' }}>{formErrors.username}</span>
-                        </label>
+                        <input
+                            type="text"
+                            name="username"
+                            placeholder='Username'
+                            className='form-control'
+                            value={formData.username}
+                            onChange={handleChange}
+                        />
+                        <small style={{ color: 'red' }}>{formErrors.username}</small>
                         <br />
-                        <label>
-                            Email:
-                            <input
-                                type="email"
-                                name="email"
-                                className='form-control'
-                                value={formData.email}
-                                onChange={handleChange}
-                            />
-                            <span style={{ color: 'red' }}>{formErrors.email}</span>
-                        </label>
+                        <input
+                            type="email"
+                            name="email"
+                            placeholder='Email'
+                            className='form-control'
+                            value={formData.email}
+                            onChange={handleChange}
+                        />
+                        <small style={{ color: 'red' }}>{formErrors.email}</small>
                         <br />
-                        <label>
-                            Password:
-                            <input
-                                type="password"
-                                name="password"
-                                className='form-control'
-                                value={formData.password}
-                                onChange={handleChange}
-                            />
-                            <span style={{ color: 'red' }}>{formErrors.password}</span>
-                        </label>
+                        <input
+                            type="password"
+                            name="password"
+                            placeholder='Password'
+                            className='form-control'
+                            value={formData.password}
+                            onChange={handleChange}
+                        />
+                        <small style={{ color: 'red' }}>{formErrors.password}</small>
                         <br />
                         <Button variant='info' className="mt-2" type="submit">Sign Up</Button>
                     </div>
