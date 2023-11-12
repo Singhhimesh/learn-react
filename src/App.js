@@ -6,8 +6,11 @@ import About from './pages/About';
 import Home from './pages/Home';
 import NavBar from './components/Navbar';
 import PageNotFound from './pages/PageNotFound';
-import Posts from './pages/Posts';
+import Todos from './pages/Todos';
 import Company from './pages/Company';
+import Login from './pages/Login';
+import ShowToDo from './pages/ShowTodo';
+import SignUp from './pages/SignUp';
 
 class App extends React.Component {
   render() {
@@ -24,8 +27,11 @@ class App extends React.Component {
                 <Route path='company' element={<Company></Company>}></Route>
               </Route>
               <Route path="/about/" element={<About></About>}></Route>
-              <Route path="/post/:slug/:id" element={<Posts></Posts>}></Route>
+              <Route path="/todos" element={<Todos></Todos>}></Route>
+              <Route path="/todo/:id" element={<ShowToDo></ShowToDo>}></Route>
               <Route path="/*" element={<PageNotFound></PageNotFound>}></Route>
+              <Route path="/login" element={<Login></Login>}></Route>
+              <Route path="/register" element={<SignUp></SignUp>}></Route>
             </Routes>
           </BrowserRouter>
         </div>
